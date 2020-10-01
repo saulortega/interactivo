@@ -21,3 +21,7 @@
 **3. Reiniciar**
 
 **4. Ingresar a http://ip.ser.vi.dor/interactivo y establecer una contraseña de administración.**
+
+**5. Invocarlo:**
+
+Desde Vicidial, en un Call Menu, llamarlo como un AGI: `http://localhost:9090,NOMBRE_ENTRADA`, donde `NOMBRE_ENTRADA` es el nombre de una entrada establecida en el sistema interactivo. `localhost` puede ser la IP del servidor en caso de que se instale en otro servidor diferente al propio Vicidial.
