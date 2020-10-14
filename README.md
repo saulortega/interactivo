@@ -16,11 +16,15 @@ Desde el computador local Linux (cambiar 1.1.1.1 por la IP del servidor. Pedirá
 
 `wget -O ./interactivo https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo ; wget -O ./interactivo.web.zip https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo.web.zip ; scp ./interactivo root@1.1.1.1:/tmp/interactivo ; scp ./interactivo.web.zip root@1.1.1.1:/tmp/interactivo.web.zip ; rm ./interactivo ; rm ./interactivo.web.zip`
 
+Entrar al servidor y ejecutar:
+
+`mkdir /opt/interactivo ; mkdir /opt/interactivo/bd ; mkdir /opt/interactivo/web ; mkdir /opt/interactivo/bin ; mkdir /opt/interactivo/log ; mv /tmp/interactivo /opt/interactivo/bin/interactivo ; mv /tmp/interactivo.web.zip /opt/interactivo/web/interactivo.web.zip ; chmod +x /opt/interactivo/bin/interactivo ; unzip /opt/interactivo/web/interactivo.web.zip -d /opt/interactivo/web/`
+
 **1. Opción C - Aplica si el servidor no tiene acceso a internet, desde Mac:**
 
 Desde el computador local Mac (cambiar 1.1.1.1 por la IP del servidor. Pedirá contraseña del servidor):
 
-`curl https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo -o ./interactivo ; curl https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo.web.zip -o ./interactivo.web.zip ; scp ./interactivo root@1.1.1.1:/tmp/interactivo ; scp ./interactivo.web.zip root@1.1.1.1:/tmp/interactivo.web.zip ; rm ./interactivo ; rm ./interactivo.web.zip`
+`curl -sL https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo -o ./interactivo ; curl -sL https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo.web.zip -o ./interactivo.web.zip ; scp ./interactivo root@1.1.1.1:/tmp/interactivo ; scp ./interactivo.web.zip root@1.1.1.1:/tmp/interactivo.web.zip ; rm ./interactivo ; rm ./interactivo.web.zip`
 
 Entrar al servidor y ejecutar:
 
@@ -28,7 +32,7 @@ Entrar al servidor y ejecutar:
 
 **2. Opción A - Aplica para Vicidial:**
 
-`mv /opt/interactivo/web/dist /srv/www/htdocs/interactivo ; echo $'#! /bin/sh\n\n/opt/interactivo/bin/interactivo >> /opt/interactivo/log/interactivo.log' > /etc/init.d/interactivo ; chmod +x /etc/init.d/interactivo ; ln -s /etc/init.d/interactivo /etc/rc5.d/S70interactivo`
+`mv /opt/interactivo/web/dist /srv/www/htdocs/interactivo ; echo $'#! /bin/sh\n\n/opt/interactivo/bin/interactivo >> /opt/interactivo/log/interactivo.log' > /etc/init.d/interactivo ; chmod +x /etc/init.d/interactivo ; ln -s /etc/init.d/interactivo /etc/rc.d/rc5.d/S70interactivo`
 
 **2. Opción B - Otros:**
 
