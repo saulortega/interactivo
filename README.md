@@ -10,11 +10,17 @@
 
 `mkdir /opt/interactivo ; mkdir /opt/interactivo/bd ; mkdir /opt/interactivo/web ; mkdir /opt/interactivo/bin ; mkdir /opt/interactivo/log ; wget -O /opt/interactivo/bin/interactivo https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo ; chmod +x /opt/interactivo/bin/interactivo ; wget -O /opt/interactivo/web/interactivo.web.zip https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo.web.zip ; unzip /opt/interactivo/web/interactivo.web.zip -d /opt/interactivo/web/`
 
-**1. Opción B - Aplica si el servidor no tiene acceso a internet:**
+**1. Opción B - Aplica si el servidor no tiene acceso a internet, desde Linux:**
 
-Desde el computador local Linux o Mac (cambiar 1.1.1.1 por la IP del servidor. Pedirá contraseña del servidor):
+Desde el computador local Linux (cambiar 1.1.1.1 por la IP del servidor. Pedirá contraseña del servidor):
 
 `wget -O ./interactivo https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo ; wget -O ./interactivo.web.zip https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo.web.zip ; scp ./interactivo root@1.1.1.1:/tmp/interactivo ; scp ./interactivo.web.zip root@1.1.1.1:/tmp/interactivo.web.zip ; rm ./interactivo ; rm ./interactivo.web.zip`
+
+**1. Opción C - Aplica si el servidor no tiene acceso a internet, desde Mac:**
+
+Desde el computador local Mac (cambiar 1.1.1.1 por la IP del servidor. Pedirá contraseña del servidor):
+
+`curl https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo -o ./interactivo ; curl https://github.com/saulortega/interactivo/releases/download/v0.1/interactivo.web.zip -o ./interactivo.web.zip ; scp ./interactivo root@1.1.1.1:/tmp/interactivo ; scp ./interactivo.web.zip root@1.1.1.1:/tmp/interactivo.web.zip ; rm ./interactivo ; rm ./interactivo.web.zip`
 
 Entrar al servidor y ejecutar:
 
