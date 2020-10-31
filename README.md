@@ -6,6 +6,16 @@
 
 **Antes de empezar:** El sistema operativo debe tener instaladas las utilidades `wget` y `unzip`. Se usarán los puertos 8081 para la gestión web y el 9090 para el AGI. Se creará un directorio `/interactivo` en la raiz del servidor web que servirá como administración web.
 
+**Si está actualizando el binario de una versión previa:**
+
+`rm /opt/interactivo/bin/interactivo`
+
+Reiniciar el servidor o matar el proceso anterior de *interactivo*.
+
+**Si está actualizando la interfaz web de una versión previa:**
+
+`rm /opt/interactivo/web/interactivo.web.zip ; rm -r /srv/www/htdocs/interactivo ; rm -r /opt/interactivo/web/dist`
+
 **1. Opción A - Aplica si el servidor tiene acceso a internet:**
 
 `mkdir /opt/interactivo ; mkdir /opt/interactivo/bd ; mkdir /opt/interactivo/web ; mkdir /opt/interactivo/bin ; mkdir /opt/interactivo/log ; wget -O /opt/interactivo/bin/interactivo https://github.com/saulortega/interactivo/releases/download/v0.2/interactivo ; chmod +x /opt/interactivo/bin/interactivo ; wget -O /opt/interactivo/web/interactivo.web.zip https://github.com/saulortega/interactivo/releases/download/v0.2/interactivo.web.zip ; unzip /opt/interactivo/web/interactivo.web.zip -d /opt/interactivo/web/`
