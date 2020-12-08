@@ -2,7 +2,33 @@
 
 **Sistema de gestión telefónica interactiva**
 
-## Instalación
+## Instalación fácil
+
+**Opción A: Si el servidor tiene acceso a internet:**
+
+`wget -O /tmp/instaladorInteractivo https://github.com/saulortega/interactivo/releases/download/v0.3/instaladorInteractivo ; chmod +x /tmp/instaladorInteractivo ; /tmp/instaladorInteractivo -i`
+
+**Opción B: Si el servidor no tiene acceso a internet, desde Linux:**
+
+Desde el computador local Linux (cambiar 1.1.1.1 por la IP del servidor. Pedirá contraseña del servidor):
+
+`wget -O ./instaladorInteractivo https://github.com/saulortega/interactivo/releases/download/v0.3/instaladorInteractivo ; scp ./instaladorInteractivo root@1.1.1.1:/tmp/instaladorInteractivo ; rm ./instaladorInteractivo`
+
+Entrar al servidor y ejecutar:
+
+`chmod +x /tmp/instaladorInteractivo ; /tmp/instaladorInteractivo -i`
+
+**Opción C: Si el servidor no tiene acceso a internet, desde Mac:**
+
+Desde el computador local Mac (cambiar 1.1.1.1 por la IP del servidor. Pedirá contraseña del servidor):
+
+`curl -sL https://github.com/saulortega/interactivo/releases/download/v0.3/instaladorInteractivo -o ./instaladorInteractivo ; scp ./instaladorInteractivo root@1.1.1.1:/tmp/instaladorInteractivo ; rm ./instaladorInteractivo`
+
+Entrar al servidor y ejecutar:
+
+`chmod +x /tmp/instaladorInteractivo ; /tmp/instaladorInteractivo -i`
+
+## Instalación manual
 
 **Antes de empezar:** El sistema operativo debe tener instaladas las utilidades `wget` y `unzip`. Se usarán los puertos 8081 para la gestión web y el 9090 para el AGI. Se creará un directorio `/interactivo` en la raiz del servidor web que servirá como administración web.
 
